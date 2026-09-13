@@ -1,0 +1,7 @@
+# Selected ensemble, preprocessing and class interpretation
+model_type: LogisticRegression
+ensemble_size: 5
+feature_order:
+  - arousal
+  - valence
+target_class: 0  # Increasing-transition support

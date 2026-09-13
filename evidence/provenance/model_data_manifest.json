@@ -1,0 +1,62 @@
+[
+  {
+    "path": "affectively/models/solid/classifier/Linear/Cluster_0_classifier_preferences_linear_0.pkl",
+    "sha256": "475c015331ce4284c56cd2ac18213d01fb38a4241bccd5519047c560fdd4435d",
+    "bytes": 1111,
+    "mode": "0o755"
+  },
+  {
+    "path": "affectively/models/solid/classifier/Linear/Cluster_0_classifier_preferences_linear_1.pkl",
+    "sha256": "e101facab01e2911cec535fab67440b2758b038c9de6826cc44dce3e4c76a824",
+    "bytes": 1111,
+    "mode": "0o755"
+  },
+  {
+    "path": "affectively/models/solid/classifier/Linear/Cluster_0_classifier_preferences_linear_2.pkl",
+    "sha256": "e2ed25971872dc3a9727f082b49c30f413ad06675f5cf91392d34c4e7108e3e3",
+    "bytes": 1111,
+    "mode": "0o755"
+  },
+  {
+    "path": "affectively/models/solid/classifier/Linear/Cluster_0_classifier_preferences_linear_3.pkl",
+    "sha256": "43ca5adada91ebac05258d8da7b88eb00159a41f03e7b603078795cc4458b825",
+    "bytes": 1111,
+    "mode": "0o755"
+  },
+  {
+    "path": "affectively/models/solid/classifier/Linear/Cluster_0_classifier_preferences_linear_4.pkl",
+    "sha256": "62958b088d142bae985dd024e4302032dfd120df7ef9ac4286672f03bd877c22",
+    "bytes": 1111,
+    "mode": "0o755"
+  },
+  {
+    "path": "affectively/models/solid/classifier/Linear/Cluster_0_classifier_preferences_linear_scaler_0.pkl",
+    "sha256": "fb0ccefb023e9af13ada2dc019c50ff008b4812abfcf3e2b7fae377c97546fd2",
+    "bytes": 2656,
+    "mode": "0o755"
+  },
+  {
+    "path": "affectively/models/solid/classifier/Linear/Cluster_0_classifier_preferences_linear_scaler_1.pkl",
+    "sha256": "bb39dd169ea594af992245d4884b32a733da11479d85e495d7e0e8355e9540f5",
+    "bytes": 2656,
+    "mode": "0o755"
+  },
+  {
+    "path": "affectively/models/solid/classifier/Linear/Cluster_0_classifier_preferences_linear_scaler_2.pkl",
+    "sha256": "89f8ef27db972a477c4dba14d712aa3a3b1f9f1e4ec4d8a886487baf70fced06",
+    "bytes": 2656,
+    "mode": "0o755"
+  },
+  {
+    "path": "affectively/models/solid/classifier/Linear/Cluster_0_classifier_preferences_linear_scaler_3.pkl",
+    "sha256": "df7a2563b79815a0ee47b4c93266e7ddde4f42bf16a9fd6157f052fb246afae5",
+    "bytes": 2656,
+    "mode": "0o755"
+  },
+  {
+    "path": "affectively/models/solid/classifier/Linear/Cluster_0_classifier_preferences_linear_scaler_4.pkl",
+    "sha256": "258c7d5bf78c9d859534c720cc278436f7a6978cf79a361fd45aa5157420338f",
+    "bytes": 2656,
+    "mode": "0o755"
+  }
+]
