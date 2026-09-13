@@ -1,0 +1,128 @@
+{
+  "status": "CONDITIONAL_PLANNING_ESTIMATE",
+  "measured_training_rates": {
+    "TASK": 106.97672874470288,
+    "MAX": 119.18945698093823
+  },
+  "evaluation_worker_seconds_per_episode": {
+    "TASK": 8.730315394299396,
+    "MAX": 8.71642530310055,
+    "RANDOM": 7.157392631999391
+  },
+  "evaluation_loop_seconds_per_episode": {
+    "TASK": 4.498388764700212,
+    "MAX": 4.77406592970001,
+    "RANDOM": 3.7952872505004054
+  },
+  "evaluation_nonloop_seconds_per_episode": {
+    "TASK": 4.231926629599184,
+    "MAX": 3.9423593734005404,
+    "RANDOM": 3.362105381498986
+  },
+  "training_nonloop_seconds_per_policy": {
+    "TASK": 7.160639515001094,
+    "MAX": 5.823038205002376
+  },
+  "nominal": {
+    "decisions_per_policy": 1000000,
+    "core_decisions": 25000000,
+    "training_loop_seconds_range": [
+      214539.2136863265,
+      228906.56785126778
+    ],
+    "training_nonloop_seconds_range": [
+      145.5759551250594,
+      179.01598787502735
+    ],
+    "evaluation_seconds_range": [
+      6754.124269965221,
+      6760.374811004702
+    ],
+    "serial_core_seconds_range": [
+      221438.91391141678,
+      235845.9586501475
+    ],
+    "serial_core_hours_range": [
+      61.51080941983799,
+      65.51276629170765
+    ],
+    "plus25percent_contingency_hours_range": [
+      76.88851177479748,
+      81.89095786463454
+    ]
+  },
+  "rollout_aligned_sensitivity": {
+    "decisions_per_policy": 1001472,
+    "core_decisions": 25036800,
+    "training_loop_seconds_range": [
+      214855.01540887274,
+      229243.51831914485
+    ],
+    "training_nonloop_seconds_range": [
+      145.5759551250594,
+      179.01598787502735
+    ],
+    "evaluation_seconds_range": [
+      6754.124269965221,
+      6760.374811004702
+    ],
+    "serial_core_seconds_range": [
+      221754.71563396303,
+      236182.90911802457
+    ],
+    "serial_core_hours_range": [
+      61.598532120545286,
+      65.60636364389572
+    ],
+    "plus25percent_contingency_hours_range": [
+      76.99816515068161,
+      82.00795455486964
+    ]
+  },
+  "development_attempt_seconds": {
+    "TASK": 582.930417060852,
+    "MAX": 530.507602108999,
+    "RANDOM": 77.75674375100061,
+    "smoke_success": 70.7106643119987,
+    "smoke_failed": 20.83140701299999
+  },
+  "storage": {
+    "measured": {
+      "TASK": {
+        "training_events_bytes_per_decision": 3382.5516796875,
+        "final_checkpoint_bytes": 276706,
+        "full_archive_compression_ratio": 0.16008176801610993
+      },
+      "MAX": {
+        "training_events_bytes_per_decision": 3382.87345703125,
+        "final_checkpoint_bytes": 276706,
+        "full_archive_compression_ratio": 0.16033575438264708
+      }
+    },
+    "raw_training_event_bytes_range": [
+      84563791992.1875,
+      84571836425.78125
+    ],
+    "raw_evaluation_event_bytes_range": [
+      1573919100,
+      1599941460
+    ],
+    "checkpoint_bytes_at10240_interval": 677929700,
+    "one_build_bytes": 190407689,
+    "duplicated_build_bytes_for805_processes": 153278189645,
+    "raw_event_plus_checkpoint_GiB_range": [
+      80.85336609947262,
+      80.88509327339125
+    ],
+    "compression_limit": "Observed whole-pilot archives include varied file types; compression ratios are planning proxies, not guaranteed for target conditions."
+  },
+  "assumptions": [
+    "25 fresh main policies: five each TASK/MAX/A/B/CONST; no controls dropped.",
+    "750 trained-policy evaluations plus30 RANDOM =780; current600-decision horizon, fresh process per episode.",
+    "A/B/CONST rates and evaluation cost bracketed by TASK/MAX, unmeasured until target integration.",
+    "Evaluation worker time already includes startup/reload/cleanup; do not add these twice.",
+    "Training nonloop residual combines imports/model initialization/player startup/final checks/cleanup; not isolated model-only timing.",
+    "25percent planning contingency separate from measured cost; development/failures listed separately.",
+    "Serial workstation estimate; no validated concurrency or acceleration; main seed/horizon design still requires G2."
+  ]
+}

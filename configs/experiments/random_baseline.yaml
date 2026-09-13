@@ -1,0 +1,6 @@
+# Random Baseline Experiment Configuration
+experiment_id: "P1-RANDOM"
+objective: "RANDOM"
+budget_decisions: 0  # No training
+evaluation_episodes: 100
+action_distribution: "uniform"

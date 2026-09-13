@@ -1,0 +1,7 @@
+condition,selection,seed,start_decision,end_decision,q_impulse_sum,delivered_reward_sum,task_events,score_start,score_end,valid_pairs,interpretation
+TASK,high_q_zero_progress,3001,241,300,1.7129791921392918,0.0,0.0,0.0,0.0,4,"High q alone is preference-model support, not task completion or measured human affect."
+TASK,ordinary_fixed,3001,31,90,1.1173603612000687,0.0,0.0,0.0,0.0,4,"High q alone is preference-model support, not task completion or measured human affect."
+MAX,high_q_zero_progress,3001,226,285,2.989856327970415,2.989856327970415,0.0,0.0,0.0,4,"High q alone is preference-model support, not task completion or measured human affect."
+MAX,ordinary_fixed,3001,31,90,2.217137347961792,2.217137347961792,0.0,0.0,0.0,4,"High q alone is preference-model support, not task completion or measured human affect."
+RANDOM,high_q_zero_progress,3008,16,75,2.584619477307463,0.0,0.0,0.0,0.0,4,"High q alone is preference-model support, not task completion or measured human affect."
+RANDOM,ordinary_fixed,3001,31,90,1.457247976161435,0.0,0.0,0.0,0.0,4,"High q alone is preference-model support, not task completion or measured human affect."
