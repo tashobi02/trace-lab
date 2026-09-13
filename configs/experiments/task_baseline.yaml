@@ -1,0 +1,6 @@
+# Task Baseline Experiment Configuration
+experiment_id: "P1-TASK"
+objective: "TASK"
+reward_function: "score_high_water"
+budget_decisions: 1000000
+evaluation_episodes: 100

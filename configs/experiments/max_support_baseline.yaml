@@ -1,0 +1,6 @@
+# Max Support Baseline Experiment Configuration
+experiment_id: "P1-MAX"
+objective: "MAX"
+reward_function: "once_per_fresh_pair_q"
+budget_decisions: 1000000
+evaluation_episodes: 100
