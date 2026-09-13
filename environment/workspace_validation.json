@@ -1,0 +1,170 @@
+{
+  "status": "PASS",
+  "verified_utc": "2026-09-13T08:42:39.905684+00:00",
+  "scope": "Notebook workspace, strict configuration, separate controller, original runtime package/import/CPU checks, and a newly executed offline runtime reconstruction. No Unity launch, model inference or training.",
+  "controller": {
+    "python": "3.13.15",
+    "distributions": 39,
+    "installation": "New isolated virtual environment; complete hash-locked wheel set installed offline into the clone.",
+    "pip_check": "PASS"
+  },
+  "scientific_runtime": {
+    "python": "3.9.23",
+    "distributions": 119,
+    "original_runtime_after_rebuild": "PASS",
+    "original_sealed_environment_records_unchanged": 33,
+    "cpu_device": "cpu",
+    "torch": "2.7.1+cu118"
+  },
+  "offline_runtime_rebuild": {
+    "status": "PASS",
+    "verified_archives": 144,
+    "verified_archive_bytes": 3283855438,
+    "command_exit_codes": [
+      0,
+      0
+    ],
+    "comparison": {
+      "status": "PASS",
+      "checks": {
+        "python_version": true,
+        "package_versions": true,
+        "pip_check": true,
+        "cpu_arithmetic": true,
+        "cpu_device": true,
+        "retained_torch": true
+      },
+      "expected_distributions": 119,
+      "missing": [],
+      "extra": [],
+      "changed": {}
+    },
+    "evidence_directory": "outputs/rebuilds/20260913T083851Z-dd429a8b",
+    "evidence_sha256": "04f2990ea0f809712852a8c6c2d377d7aeecf05ea3cc0e6c008cb26bddc6841f",
+    "new_prefix": "outputs/environments/runtime-verified"
+  },
+  "configuration_regression_tests": 9,
+  "fresh_clone_and_staging_cases": [
+    {
+      "notebook": "notebooks/library/configuration.ipynb",
+      "case": "definitions",
+      "status": "PASS"
+    },
+    {
+      "notebook": "notebooks/getting_started/inspect_workspace.ipynb",
+      "case": "fresh_clone_inspection",
+      "status": "PASS"
+    },
+    {
+      "notebook": "tests/offline/test_workspace_configuration.ipynb",
+      "case": "configuration_regressions",
+      "status": "PASS"
+    },
+    {
+      "notebook": "environment/validate_notebook_environment.ipynb",
+      "case": "controller_without_runtime",
+      "status": "PASS"
+    },
+    {
+      "notebook": "notebooks/getting_started/verify_environment.ipynb",
+      "case": "missing_runtime_report",
+      "status": "PASS"
+    },
+    {
+      "notebook": "environment/rebuild_runtime.ipynb",
+      "case": "missing_rebuild_prerequisites",
+      "status": "PASS"
+    },
+    {
+      "notebook": "notebooks/getting_started/verify_environment.ipynb",
+      "case": "preserved_runtime",
+      "status": "PASS"
+    },
+    {
+      "notebook": "environment/validate_notebook_environment.ipynb",
+      "case": "controller_with_runtime",
+      "status": "PASS"
+    },
+    {
+      "notebook": "environment/rebuild_runtime.ipynb",
+      "case": "verified_rebuild_plan",
+      "status": "PASS"
+    }
+  ],
+  "actual_clone_cases": [
+    {
+      "notebook": "notebooks/getting_started/inspect_workspace.ipynb",
+      "case": "clone_inspection",
+      "status": "PASS"
+    },
+    {
+      "notebook": "tests/offline/test_workspace_configuration.ipynb",
+      "case": "clone_configuration_regressions",
+      "status": "PASS"
+    },
+    {
+      "notebook": "environment/validate_notebook_environment.ipynb",
+      "case": "clone_controller_and_runtime",
+      "status": "PASS"
+    },
+    {
+      "notebook": "notebooks/getting_started/verify_environment.ipynb",
+      "case": "clone_original_runtime",
+      "status": "PASS"
+    },
+    {
+      "notebook": "environment/rebuild_runtime.ipynb",
+      "case": "clone_offline_runtime_rebuild",
+      "status": "PASS"
+    }
+  ],
+  "rebuild_guard_cases": [
+    {
+      "case": "existing_rebuild_target",
+      "status": "PASS",
+      "expected_rejection": "Refusing existing environment"
+    },
+    {
+      "case": "outside_rebuild_target",
+      "status": "PASS",
+      "expected_rejection": "Rebuild target must be a new child"
+    },
+    {
+      "case": "original_runtime_after_rebuild",
+      "status": "PASS"
+    }
+  ],
+  "source_notebooks": [
+    {
+      "path": "environment/rebuild_runtime.ipynb",
+      "sha256": "e1e40a81d7ba6fb19bceff28e3c1c88b6c459607f7b1da324c12859406966445"
+    },
+    {
+      "path": "environment/validate_notebook_environment.ipynb",
+      "sha256": "c49cba202dccc7edac4171e8605114271906fe7235e22167117bf2a271689dbb"
+    },
+    {
+      "path": "notebooks/getting_started/inspect_workspace.ipynb",
+      "sha256": "c1652ba9721591a0084996a6a5e7c3b282a7df622cc704adb38e354d07af6050"
+    },
+    {
+      "path": "notebooks/getting_started/verify_environment.ipynb",
+      "sha256": "562df5e94c0e75c98ca2acacf6f1f29dc59a56f529e5d8b61ef01313e03a4acc"
+    },
+    {
+      "path": "notebooks/library/configuration.ipynb",
+      "sha256": "126fe9e349fcf9207d1e860a1d517ea0633be762993b4929c1a0a8851a05ef63"
+    },
+    {
+      "path": "tests/offline/test_workspace_configuration.ipynb",
+      "sha256": "7fd8008572226353c8a0d568d426747c9dad6ca61bc6e12af90a38145c5a27cc"
+    }
+  ],
+  "github_actions": "Workflow configured; offline cases passed locally. Hosted run awaits a push.",
+  "resolved_migration_issue": "The Jupyter controller exposed its inline plotting backend to the scientific subprocess. The probe now explicitly sets MPLBACKEND=Agg; original packages are unchanged.",
+  "limits": [
+    "Same-host Linux x86-64 verification only.",
+    "Notebook controller is not a validated scientific training kernel.",
+    "Model/player/dataset configuration reports availability only in this commit."
+  ]
+}
