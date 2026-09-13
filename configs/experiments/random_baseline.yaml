@@ -1,6 +1,70 @@
-# Random Baseline Experiment Configuration
-experiment_id: "P1-RANDOM"
-objective: "RANDOM"
-budget_decisions: 0  # No training
-evaluation_episodes: 100
-action_distribution: "uniform"
+{
+  "condition": "RANDOM",
+  "observation_schema": "solid81_time_qincrease_valid_fresh_age_v1",
+  "action_nvec": [
+    3,
+    3
+  ],
+  "window_seconds": 3.0,
+  "window_decisions": 15,
+  "first_valid_pair_seconds": 6.0,
+  "horizon_seconds": 120.0,
+  "horizon_decisions": 600,
+  "time_scale": 1,
+  "capture_fps": 5,
+  "headless": true,
+  "environments": 1,
+  "reward": {
+    "TASK": "b=1 iff running maximum raw Unity score increases; identity normalization",
+    "MAX": "q_increase once per new valid pair,0 otherwise",
+    "q": "mean class0 support after stored affine scaler and native clipping"
+  },
+  "training_decisions": 0,
+  "rollouts": 0,
+  "ppo": null,
+  "policy": "uniform legal steering/pedal",
+  "policy_initialization_seed": null,
+  "simulator_initialization_seed": null,
+  "seed_limit": "Startup seed applied; per-reset Unity reseeding unavailable; episode diversity not demonstrated.",
+  "evaluation": {
+    "episodes": 10,
+    "requested_simulator_initialization_seeds": [
+      3001,
+      3002,
+      3003,
+      3004,
+      3005,
+      3006,
+      3007,
+      3008,
+      3009,
+      3010
+    ],
+    "random_action_sampler_seeds": [
+      4001,
+      4002,
+      4003,
+      4004,
+      4005,
+      4006,
+      4007,
+      4008,
+      4009,
+      4010
+    ],
+    "deterministic_policy_actions": false,
+    "fresh_process_per_requested_simulator_seed": true,
+    "interpretation": "development repeated episodes; do not claim diverse held-out seed distribution"
+  },
+  "adapter_reward_condition": "TASK",
+  "action_sampler": "numpy.random.default_rng(seed).integers(0,3,size=2,dtype=int64); independent uniform steering/pedal",
+  "training_timeout_seconds": null,
+  "evaluation_timeout_seconds": 180,
+  "run_id": "random_baseline",
+  "experiment_id": "random_baseline",
+  "worker_id": 176,
+  "budget_decisions": 0,
+  "evaluation_episodes": 10,
+  "torch_num_threads": 1,
+  "torch_num_interop_threads": 1
+}

@@ -1,7 +1,5 @@
-# Two isolated environments
+# Controller, scientific kernel and worker runtime
 
-The **scientific runtime** is the preserved Python 3.9.23 stack with 119 packages. The **notebook controller** is a separate Python 3.13 virtual environment containing the notebook executor/kernel and YAML parser. Its own complete package pins and wheel hashes are recorded under `notebook_tooling/`.
+The controller is isolated Python 3.13 with its original hashed tooling lock. Scientific workers use the preserved Python 3.9.23 runtime and its 119-package lock. Scientific notebook kernels add a separately hashed 29-package tooling overlay under ignored outputs; this supplies Jupyter without altering the scientific runtime installation. Worker subprocesses remove that overlay before launch.
 
-The controller calls the scientific interpreter as a subprocess for package/import/CPU checks. It does not import scientific packages into its own kernel or modify the scientific environment. This commit does not establish a notebook-based training kernel: the future runtime integration must validate that execution boundary before accepted experiments.
-
-Start with [setup](../docs/setup.md), [controller validation](validate_notebook_environment.ipynb), then [runtime verification](../notebooks/getting_started/verify_environment.ipynb). The [offline rebuild notebook](rebuild_runtime.ipynb) restores only a new target under `outputs/environments/` and defaults to plan-only mode.
+`rebuild_runtime.ipynb` restores a new runtime target from the 144 retained archives. `setup_scientific_kernel.ipynb` verifies/installs the isolated tooling overlay and registers the local scientific kernel. Read [setup](../docs/setup.md). Kernel tooling is not evidence of a changed CUDA execution route: the preserved torch CUDA-wheel deviation remains documented, and accepted training uses CPU.

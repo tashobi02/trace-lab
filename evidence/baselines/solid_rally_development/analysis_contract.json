@@ -1,0 +1,19 @@
+{
+  "started_utc": "2026-09-12T20:29:00.639054+00:00",
+  "prior_sealed_files_verified": {
+    "3": 27,
+    "4": 37,
+    "5": 54,
+    "6": 39,
+    "7_8": 46
+  },
+  "zero_progress_tolerance": 0.0,
+  "zero_progress_definition": "No raw score high-water increase above reset baseline zero; exact nonpositive score and zero event count. Integer score events require no floating tolerance.",
+  "timing_of_freeze": "Frozen before RANDOM execution and combined table computation; earlier TASK/MAX zero evaluation outcomes were already known. Not retrospective preregistration.",
+  "coverage_definition": "Valid fresh pairs / max(floor(actual_decisions/15)-1,0); additionally report horizon-relative pairs/39 and warmup decisions.",
+  "segment_selection_rule": "Per condition: highest sum of q impulses among zero-task-event contiguous60-decision evaluation segments, ties earliest seed/start; ordinary comparison is earliest episode decisions31-90. Rank using q impulses for all conditions regardless of delivered objective.",
+  "main_budget_proposed": 1000000,
+  "rollout_alignment_sensitivity": 1001472,
+  "contingency_fraction": 0.25,
+  "target_condition_rate_assumption": "A/B/CONST use measured TASK/MAX range; unmeasured, update after integration."
+}

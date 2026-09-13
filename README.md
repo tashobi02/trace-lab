@@ -1,40 +1,13 @@
 # Trace Lab
 
-A notebook workspace for trace conditioning and model-mediated rewards in reinforcement learning.
+Notebook-based Solid Rally experiments and preparation for trace conditioning. This is a development research repository, not the final thesis repository.
 
-This initial implementation provides portable configuration, preserved scientific-runtime records, an isolated notebook controller, workspace inspection, runtime verification and offline restoration. Model scoring, Unity integration, rewards, training and trace analysis will be added incrementally with their verification. Existing research findings are not presented as newly executed notebook experiments.
+The implemented pipeline verifies frozen native source, player, model and data identities; constructs a matched Unity interface; records decision telemetry; trains supervised PPO TASK/MAX baselines; evaluates saved checkpoints and uniform random actions in fresh processes; reconstructs results; and exports valid window traces.
 
-## Start here
+All maintained Python implementation lives in `.ipynb` files. Code cells retain genuine visible outputs. Imported notebook modules execute only cells tagged `module`; importing them never launches an experiment. The native third-party source is preserved separately as a hashed archive.
 
-1. Follow [setup](docs/setup.md) to create the pinned Python 3.13 notebook controller.
-2. Open [inspect_workspace.ipynb](notebooks/getting_started/inspect_workspace.ipynb) and select **Trace Lab controller**.
-3. Copy [assets.example.yaml](configs/assets.example.yaml) to `configs/assets.local.yaml` and set your local paths.
-4. Run [controller validation](environment/validate_notebook_environment.ipynb) and [runtime verification](notebooks/getting_started/verify_environment.ipynb).
-5. If needed, use the [offline rebuild notebook](environment/rebuild_runtime.ipynb) with the preserved installation archives.
+Historical development results: TASK and MAX each trained for 51,200 decisions and were evaluated for ten 600-decision episodes; RANDOM has ten episodes. Mean raw scores are 0.0, 0.0 and 0.2; mean valid-pair preference support is 0.277121038, 0.580440079 and 0.412617442, respectively. The analysis reconstructs 7,824 valid comparisons across 202 traces from 32 source event files. See [findings](docs/baseline_findings.md) and [limits](docs/known_limitations.md).
 
-A fresh clone can inspect its records and run offline configuration checks without a Unity player, models or scientific runtime. Missing assets are reported explicitly. Runtime verification is BLOCKED until its interpreter is configured.
+The repaired scorer matches every historical comparison within the original tolerance. A new 4,096-decision notebook-runtime smoke run and two fresh evaluations passed; final policy state, optimizer state and saved-observation actions match the original smoke exactly. This does not claim newly repeated full baseline training. See [verification](docs/verification_report.md).
 
-## Repository layout
-
-```text
-notebooks/getting_started/    Workspace and runtime inspection
-notebooks/library/            Reusable notebook definitions
-configs/                      Validated settings and local-path example
-environment/runtime/          Preserved Python 3.9 runtime locks and inventories
-environment/notebook_tooling/  Separate Python 3.13 controller lock and wheel identities
-environment/*.ipynb            Controller validation and offline runtime restoration
-tests/offline/                Executable configuration regression notebook
-docs/                         Setup, scope and execution conventions
-assets/                       Local bulk inputs (ignored except README)
-outputs/                      Local generated evidence/environments (ignored except README)
-```
-
-All maintained executable source is `.ipynb`. Every code cell has a visible, saved execution result. These outputs are a snapshot of the recorded local run; complete execution copies and logs are also saved separately. Shared definition notebooks display a loading confirmation and do not launch processes or install packages when loaded.
-
-## Reproducibility
-
-The scientific runtime remains Python 3.9.23 with 119 recorded distributions, including torch 2.7.1+cu118 used explicitly on CPU. The controller uses a separate virtual environment and probes that runtime through a subprocess. Its dependencies are not installed into the scientific environment.
-
-The original pip/conda locks and package inventory retain their recorded bytes. Local cache-source paths are removed from the normalized artifact manifest, with both original and normalized hashes recorded. The 144 runtime installation archives are local bulk dependencies and are not included in Git. See [environment records](environment/README.md) and [local validation](environment/workspace_validation.json).
-
-See [notebook navigation](notebooks/README.md), [configuration](configs/README.md), [tests](tests/README.md), [scope](docs/scope.md), and [third-party notices](THIRD_PARTY_NOTICES.md). The repository uses the existing [MIT license](LICENSE).
+Start with [setup](docs/setup.md), then [notebook architecture](docs/notebook_architecture.md) and [running experiments](docs/running_experiments.md). Controller notebooks use `trace-lab-controller`; scientific notebooks declare `trace-lab-scientific`. Bulk licensed assets and historical run archives must be supplied locally according to their manifests; they are excluded from Git. Missing assets are a blocking error for dependent checks.

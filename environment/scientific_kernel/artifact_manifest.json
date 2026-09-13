@@ -1,0 +1,205 @@
+[
+  {
+    "name": "backcall",
+    "version": "0.2.0",
+    "path": "assets/package_cache/scientific_kernel/backcall-0.2.0-py2.py3-none-any.whl",
+    "bytes": 11157,
+    "sha256": "fbbce6a29f263178a1f7915c1940bde0ec2b2a967566fe1c65c1dfb7422bd255"
+  },
+  {
+    "name": "comm",
+    "version": "0.2.3",
+    "path": "assets/package_cache/scientific_kernel/comm-0.2.3-py3-none-any.whl",
+    "bytes": 7294,
+    "sha256": "c615d91d75f7f04f095b30d1c1711babd43bdc6419c1be9886a85f2f4e489417"
+  },
+  {
+    "name": "debugpy",
+    "version": "1.8.21",
+    "path": "assets/package_cache/scientific_kernel/debugpy-1.8.21-cp39-cp39-manylinux_2_34_x86_64.whl",
+    "bytes": 2999455,
+    "sha256": "f15c10084f9861b5e8414a48f18f8e4aadf51a98a59e72c16aa28281ca994672"
+  },
+  {
+    "name": "decorator",
+    "version": "4.4.2",
+    "path": "assets/package_cache/scientific_kernel/decorator-4.4.2-py2.py3-none-any.whl",
+    "bytes": 9239,
+    "sha256": "41fa54c2a0cc4ba648be4fd43cff00aedf5b9465c9bf18d64325bc225f08f760"
+  },
+  {
+    "name": "importlib_metadata",
+    "version": "8.7.1",
+    "path": "assets/package_cache/scientific_kernel/importlib_metadata-8.7.1-py3-none-any.whl",
+    "bytes": 27865,
+    "sha256": "5a1f80bf1daa489495071efbb095d75a634cf28a8bc299581244063b53176151"
+  },
+  {
+    "name": "ipykernel",
+    "version": "6.29.5",
+    "path": "assets/package_cache/scientific_kernel/ipykernel-6.29.5-py3-none-any.whl",
+    "bytes": 117173,
+    "sha256": "afdb66ba5aa354b09b91379bac28ae4afebbb30e8b39510c9690afb7a10421b5"
+  },
+  {
+    "name": "ipython",
+    "version": "7.34.0",
+    "path": "assets/package_cache/scientific_kernel/ipython-7.34.0-py3-none-any.whl",
+    "bytes": 793790,
+    "sha256": "c175d2440a1caff76116eb719d40538fbb316e214eda85c5515c303aacbfb23e"
+  },
+  {
+    "name": "jedi",
+    "version": "0.19.2",
+    "path": "assets/package_cache/scientific_kernel/jedi-0.19.2-py2.py3-none-any.whl",
+    "bytes": 1572278,
+    "sha256": "a8ef22bde8490f57fe5c7681a3c83cb58874daf72b4784de3cce5b6ef6edb5b9"
+  },
+  {
+    "name": "jupyter_client",
+    "version": "8.6.3",
+    "path": "assets/package_cache/scientific_kernel/jupyter_client-8.6.3-py3-none-any.whl",
+    "bytes": 106105,
+    "sha256": "e8a19cc986cc45905ac3362915f410f3af85424b4c0905e94fa5f2cb08e8f23f"
+  },
+  {
+    "name": "jupyter_core",
+    "version": "5.8.1",
+    "path": "assets/package_cache/scientific_kernel/jupyter_core-5.8.1-py3-none-any.whl",
+    "bytes": 28880,
+    "sha256": "c28d268fc90fb53f1338ded2eb410704c5449a358406e8a948b75706e24863d0"
+  },
+  {
+    "name": "matplotlib-inline",
+    "version": "0.2.2",
+    "path": "assets/package_cache/scientific_kernel/matplotlib_inline-0.2.2-py3-none-any.whl",
+    "bytes": 9534,
+    "sha256": "3c821cf1c209f59fb2d2d64abbf5b23b67bcb2210d663f9918dd851c6da1fcf6"
+  },
+  {
+    "name": "nest-asyncio",
+    "version": "1.6.0",
+    "path": "assets/package_cache/scientific_kernel/nest_asyncio-1.6.0-py3-none-any.whl",
+    "bytes": 5195,
+    "sha256": "87af6efd6b5e897c81050477ef65c62e2b2f35d51703cae01aff2905b1852e1c"
+  },
+  {
+    "name": "packaging",
+    "version": "26.3",
+    "path": "assets/package_cache/scientific_kernel/packaging-26.3-py3-none-any.whl",
+    "bytes": 129956,
+    "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c"
+  },
+  {
+    "name": "parso",
+    "version": "0.8.7",
+    "path": "assets/package_cache/scientific_kernel/parso-0.8.7-py2.py3-none-any.whl",
+    "bytes": 107025,
+    "sha256": "a8926eb2a1b915486941fdbd31e86a4baf88fe8c210f25f2f35ecec5b574ca1c"
+  },
+  {
+    "name": "pexpect",
+    "version": "4.9.0",
+    "path": "assets/package_cache/scientific_kernel/pexpect-4.9.0-py2.py3-none-any.whl",
+    "bytes": 63772,
+    "sha256": "7236d1e080e4936be2dc3e326cec0af72acf9212a7e1d060210e70a47e253523"
+  },
+  {
+    "name": "pickleshare",
+    "version": "0.7.5",
+    "path": "assets/package_cache/scientific_kernel/pickleshare-0.7.5-py2.py3-none-any.whl",
+    "bytes": 6877,
+    "sha256": "9649af414d74d4df115d5d718f82acb59c9d418196b7b4290ed47a12ce62df56"
+  },
+  {
+    "name": "platformdirs",
+    "version": "4.4.0",
+    "path": "assets/package_cache/scientific_kernel/platformdirs-4.4.0-py3-none-any.whl",
+    "bytes": 18654,
+    "sha256": "abd01743f24e5287cd7a5db3752faf1a2d65353f38ec26d98e25a6db65958c85"
+  },
+  {
+    "name": "prompt_toolkit",
+    "version": "3.0.52",
+    "path": "assets/package_cache/scientific_kernel/prompt_toolkit-3.0.52-py3-none-any.whl",
+    "bytes": 391431,
+    "sha256": "9aac639a3bbd33284347de5ad8d68ecc044b91a762dc39b7c21095fcd6a19955"
+  },
+  {
+    "name": "psutil",
+    "version": "7.2.2",
+    "path": "assets/package_cache/scientific_kernel/psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl",
+    "bytes": 155560,
+    "sha256": "076a2d2f923fd4821644f5ba89f059523da90dc9014e85f8e45a5774ca5bc6f9"
+  },
+  {
+    "name": "ptyprocess",
+    "version": "0.7.0",
+    "path": "assets/package_cache/scientific_kernel/ptyprocess-0.7.0-py2.py3-none-any.whl",
+    "bytes": 13993,
+    "sha256": "4b41f3967fce3af57cc7e94b888626c18bf37a083e3651ca8feeb66d492fef35"
+  },
+  {
+    "name": "Pygments",
+    "version": "2.21.0",
+    "path": "assets/package_cache/scientific_kernel/pygments-2.21.0-py3-none-any.whl",
+    "bytes": 1250147,
+    "sha256": "2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9"
+  },
+  {
+    "name": "python-dateutil",
+    "version": "2.9.0.post0",
+    "path": "assets/package_cache/scientific_kernel/python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
+    "bytes": 229892,
+    "sha256": "a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427"
+  },
+  {
+    "name": "pyzmq",
+    "version": "27.2.0",
+    "path": "assets/package_cache/scientific_kernel/pyzmq-27.2.0-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+    "bytes": 898372,
+    "sha256": "7e2579c5de82ddf4544d723c1bc8b44c3b806d157acc9fb2a2d18e10ef28e202"
+  },
+  {
+    "name": "setuptools",
+    "version": "82.0.1",
+    "path": "assets/package_cache/scientific_kernel/setuptools-82.0.1-py3-none-any.whl",
+    "bytes": 1006223,
+    "sha256": "a59e362652f08dcd477c78bb6e7bd9d80a7995bc73ce773050228a348ce2e5bb"
+  },
+  {
+    "name": "six",
+    "version": "1.17.0",
+    "path": "assets/package_cache/scientific_kernel/six-1.17.0-py2.py3-none-any.whl",
+    "bytes": 11050,
+    "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274"
+  },
+  {
+    "name": "tornado",
+    "version": "6.5.8",
+    "path": "assets/package_cache/scientific_kernel/tornado-6.5.8-cp39-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl",
+    "bytes": 450707,
+    "sha256": "547d63f450d570c14fe0e8db2cfb14c9bbd1c2503b4a6612586267955aa47b58"
+  },
+  {
+    "name": "traitlets",
+    "version": "5.15.1",
+    "path": "assets/package_cache/scientific_kernel/traitlets-5.15.1-py3-none-any.whl",
+    "bytes": 85858,
+    "sha256": "770a53705f84b81ac107e83a1b3328ff2dae16094d8fc3cfc004e4b22dfd8e92"
+  },
+  {
+    "name": "wcwidth",
+    "version": "0.8.3",
+    "path": "assets/package_cache/scientific_kernel/wcwidth-0.8.3-py3-none-any.whl",
+    "bytes": 331669,
+    "sha256": "d5b73dba6158a595ec9370350e7f2637bcac8d6c5e4fde34f30fcffb6103a5e4"
+  },
+  {
+    "name": "zipp",
+    "version": "3.23.1",
+    "path": "assets/package_cache/scientific_kernel/zipp-3.23.1-py3-none-any.whl",
+    "bytes": 10378,
+    "sha256": "0b3596c50a5c700c9cb40ba8d86d9f2cc4807e9bedb06bcdf7fac85633e444dc"
+  }
+]

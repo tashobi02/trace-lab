@@ -1,0 +1,22 @@
+diff --git a/affectively/builds/solid/Linux/solid_Data/ML-Agents/Timers/Gym Solid Rally_timers.json b/affectively/builds/solid/Linux/solid_Data/ML-Agents/Timers/Gym Solid Rally_timers.json
+index ea7c0b013fbcb108e833a60639d3b402c2826dcf..5cee7cc0b8686917a07157e12fd4a3046e755c3c 100755
+--- a/affectively/builds/solid/Linux/solid_Data/ML-Agents/Timers/Gym Solid Rally_timers.json	
++++ b/affectively/builds/solid/Linux/solid_Data/ML-Agents/Timers/Gym Solid Rally_timers.json	
+@@ -1 +1 @@
+-{"count":1,"self":1.394869,"total":2015.040687,"children":{"InitializeActuators":{"count":1,"self":0.001144,"total":0.001144,"children":null},"InitializeSensors":{"count":1,"self":0.001191,"total":0.001191,"children":null},"AgentSendState":{"count":2,"self":0.000669,"total":0.011972,"children":{"CollectObservations":{"count":2,"self":0.006187,"total":0.006187,"children":null},"WriteActionMask":{"count":2,"self":0.000159,"total":0.000159,"children":null},"RequestDecision":{"count":2,"self":0.001188,"total":0.004957,"children":{"AgentInfo.ToProto":{"count":2,"self":0.000532,"total":0.0037689999999999998,"children":{"GenerateSensorData":{"count":2,"self":0.003237,"total":0.003237,"children":null}}}}}}},"DecideAction":{"count":2,"self":2013.6288255999998,"total":2013.6289049999998,"children":null},"AgentAct":{"count":2,"self":0.00053,"total":0.00053,"children":null}},"gauges":{},"metadata":{"timer_format_version":"0.1.0","start_time_seconds":"1779454714","unity_version":"2022.3.62f3","command_line_arguments":"\/run\/media\/mbarthet\/Matts SSD\/Affectively-Framework\/.\/affectively\/builds\/solid\/Linux\/solid.x86_64 -nographics -batchmode --mlagents-port 5005 -relativeObs False -frameBuffer False -socketID d506a8c3-2836-4b1c-a99d-440e9cc79e12 -decisionPeriod 10","communication_protocol_version":"1.5.0","com.unity.ml-agents_version":"2.0.1","scene_name":"Gym Solid Rally","end_time_seconds":"1779456729"}}
+\ No newline at end of file
++{"count":1,"self":320.3782912,"total":719.22419,"children":{"InitializeActuators":{"count":1,"self":0.0027519999999999997,"total":0.0027519999999999997,"children":null},"InitializeSensors":{"count":1,"self":0.0025599999999999998,"total":0.0025599999999999998,"children":null},"AgentSendState":{"count":307261,"self":0.61010199999999992,"total":9.8024329999999988,"children":{"CollectObservations":{"count":30774,"self":8.1553352,"total":8.1553349999999991,"children":null},"WriteActionMask":{"count":30774,"self":0.036613,"total":0.036613,"children":null},"RequestDecision":{"count":30774,"self":0.089673,"total":1.000383,"children":{"AgentInfo.ToProto":{"count":30774,"self":0.14762,"total":0.91070999999999991,"children":{"GenerateSensorData":{"count":30774,"self":0.76308999999999994,"total":0.76308999999999994,"children":null}}}}}}},"DecideAction":{"count":307261,"self":379.33186559999996,"total":379.331863,"children":null},"AgentAct":{"count":307261,"self":9.7046704,"total":9.70467,"children":null}},"gauges":{},"metadata":{"timer_format_version":"0.1.0","start_time_seconds":"1789189549","unity_version":"2022.3.62f3","command_line_arguments":"\/home\/obidit\/moggingSSLResearch\/900_PrePreDefense\/phase1\/source_snapshot\/Affectively-Framework\/.\/affectively\/builds\/solid\/Linux\/solid.x86_64 -nographics -batchmode --mlagents-port 5005 -relativeObs True -frameBuffer False -socketID 0b563072-a2f2-4942-b473-b06cc745a7d0 -decisionPeriod 10","communication_protocol_version":"1.5.0","com.unity.ml-agents_version":"2.0.1","scene_name":"Gym Solid Rally","end_time_seconds":"1789190268"}}
+\ No newline at end of file
+diff --git a/train.py b/train.py
+index 779a78f6fe222f901d4e5fa9ec0c1c2b1a1bb460..3c78c0640b0edd1cbee426331a6cf85fef6f1a86 100755
+--- a/train.py
++++ b/train.py
+@@ -47,7 +47,7 @@ if __name__ == "__main__":
+     
+     print(experiment_folder)
+     if not os.path.exists(experiment_folder):
+-        os.mkdir(experiment_folder)
++        os.makedirs(experiment_folder)
+ 
+     for run in range(args.run):
+ 

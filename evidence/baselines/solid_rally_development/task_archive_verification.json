@@ -1,0 +1,11 @@
+{
+  "condition": "TASK",
+  "status": "PASS",
+  "raw_files": 158,
+  "raw_bytes": 196374093,
+  "archive": "TASK_runtime_evidence.tar.gz",
+  "archive_bytes": 31435912,
+  "archive_sha256": "720d22529bbd4a3314ed95cb6aeeaa5375d95a3e17b5e2c8f6fdb307fe6d9d5b",
+  "archive_members_verified": true,
+  "excluded_bulk": "Per-process runtime_build and config-home caches; full player inventories separately saved."
+}

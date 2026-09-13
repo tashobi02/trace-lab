@@ -1,0 +1,32 @@
+{
+  "static_checks": "PASS",
+  "fixed_delta_time_seconds": 0.02,
+  "decision_period": 10,
+  "decision_seconds": 0.2,
+  "window_decisions": 15,
+  "window_seconds": 3.0,
+  "horizon_decisions": 600,
+  "horizon_seconds": 120.0,
+  "method_evidence": "tooling/timing_seed_methods.il",
+  "python_source_hashes": [
+    {
+      "path": "/home/obidit/miniconda3/envs/affect-envs/lib/python3.9/site-packages/mlagents_envs/environment.py",
+      "sha256": "90340aa38ea8266eaa6b22e7338f96e040dc049e42953c194fccce5a18bd5028"
+    },
+    {
+      "path": "/home/obidit/miniconda3/envs/affect-envs/lib/python3.9/site-packages/mlagents_envs/rpc_communicator.py",
+      "sha256": "36ce7446036fbc064e3684502dde724732366c70e2a41a5aa9f84be058471da4"
+    },
+    {
+      "path": "/home/obidit/miniconda3/envs/affect-envs/lib/python3.9/site-packages/stable_baselines3/common/utils.py",
+      "sha256": "b57b958fae5a7416dd0187f8ad422b66d04794ffe3e8c3fcf870bfb5f6f82ab3"
+    },
+    {
+      "path": "/home/obidit/moggingSSLResearch/900_PrePreDefense/phase1/session5/code/affectively/environments/__init__.py",
+      "sha256": "b684b558f516cff28dac7f51c9b88c37610fe1cb28dc9fb02c802d1510b2c2d5"
+    }
+  ],
+  "timing_derivation": "Solid Start sets fixedDeltaTime .02; actual -decisionPeriod10 sets DecisionRequester field; default Academy stepper calls EnvironmentStep in FixedUpdate; DecisionRequester requests on AcademyStepCount %10==0; reset clears Academy step count. DataLogger averages fixed-update samples and clears after observation; Python averages15 decision vectors. Runtime timer-count cross-check required alongside this static chain.",
+  "seed_derivation": "Python initialization protocol seed reaches compiled Academy Random.InitState and inference seed. RESET command has no seed; Session3/4 wrapper ignored reset seed. Session5 wrapper explicitly seeds its Python RNG and reports reset_reseeds_unity=false. Different simulator initialization seed requires a fresh player process.",
+  "randomness_limit": "Startup propagation does not by itself establish that different seeds yield different task dynamics or independent evaluation episodes."
+}

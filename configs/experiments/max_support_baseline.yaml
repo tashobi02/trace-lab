@@ -1,6 +1,99 @@
-# Max Support Baseline Experiment Configuration
-experiment_id: "P1-MAX"
-objective: "MAX"
-reward_function: "once_per_fresh_pair_q"
-budget_decisions: 1000000
-evaluation_episodes: 100
+{
+  "condition": "MAX",
+  "observation_schema": "solid81_time_qincrease_valid_fresh_age_v1",
+  "action_nvec": [
+    3,
+    3
+  ],
+  "window_seconds": 3.0,
+  "window_decisions": 15,
+  "first_valid_pair_seconds": 6.0,
+  "horizon_seconds": 120.0,
+  "horizon_decisions": 600,
+  "time_scale": 1,
+  "capture_fps": 5,
+  "headless": true,
+  "environments": 1,
+  "reward": {
+    "TASK": "b=1 iff running maximum raw Unity score increases; identity normalization",
+    "MAX": "q_increase once per new valid pair,0 otherwise",
+    "q": "mean class0 support after stored affine scaler and native clipping"
+  },
+  "training_decisions": 51200,
+  "rollouts": 25,
+  "ppo": {
+    "learning_rate": 0.0003,
+    "n_steps": 2048,
+    "batch_size": 64,
+    "n_epochs": 10,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "clip_range": 0.2,
+    "clip_range_vf": null,
+    "normalize_advantage": true,
+    "ent_coef": 0.0,
+    "vf_coef": 0.5,
+    "max_grad_norm": 0.5,
+    "use_sde": false,
+    "sde_sample_freq": -1,
+    "rollout_buffer_class": null,
+    "rollout_buffer_kwargs": null,
+    "target_kl": null,
+    "stats_window_size": 100,
+    "tensorboard_log": null,
+    "policy_kwargs": {
+      "net_arch": {
+        "pi": [
+          64,
+          64
+        ],
+        "vf": [
+          64,
+          64
+        ]
+      },
+      "activation_fn": "torch.nn.Tanh",
+      "ortho_init": true,
+      "optimizer_class": "torch.optim.Adam",
+      "optimizer_kwargs": {
+        "eps": 1e-05
+      }
+    },
+    "verbose": 1,
+    "seed": 1102,
+    "device": "cpu"
+  },
+  "policy": "MlpPolicy",
+  "policy_initialization_seed": 1102,
+  "simulator_initialization_seed": 2102,
+  "seed_limit": "Startup seed applied; per-reset Unity reseeding unavailable; episode diversity not demonstrated.",
+  "evaluation": {
+    "episodes": 10,
+    "requested_simulator_initialization_seeds": [
+      3001,
+      3002,
+      3003,
+      3004,
+      3005,
+      3006,
+      3007,
+      3008,
+      3009,
+      3010
+    ],
+    "random_action_sampler_seeds": null,
+    "deterministic_policy_actions": true,
+    "fresh_process_per_requested_simulator_seed": true,
+    "interpretation": "development repeated episodes; do not claim diverse held-out seed distribution"
+  },
+  "torch_num_threads": 1,
+  "torch_num_interop_threads": 1,
+  "checkpoint_interval_decisions": 10240,
+  "training_timeout_seconds": 7200,
+  "evaluation_timeout_seconds": 180,
+  "run_id": "max_support_baseline",
+  "experiment_id": "max_support_baseline",
+  "worker_id": 176,
+  "budget_decisions": 51200,
+  "evaluation_episodes": 10
+}

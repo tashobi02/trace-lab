@@ -1,0 +1,22 @@
+[
+  {
+    "path": "outputs/exports/solid_rally_development/source_manifest.json",
+    "sha256": "1d5fe7d70b8b149ccbfd23ddb0ef74b5a5d8df500388c6355e43852422c73113",
+    "bytes": 10697
+  },
+  {
+    "path": "outputs/exports/solid_rally_development/support_summary.csv",
+    "sha256": "c0d18a41a45cdd27b2500ae4e70922830bb7f443bbbb5c5e0c7eeea3efd5e485",
+    "bytes": 1200
+  },
+  {
+    "path": "outputs/exports/solid_rally_development/trace_index.csv",
+    "sha256": "43a8f9559c29648eea35c043df0d4e4ca5f29ba7458e242eaa07cb2680b96728",
+    "bytes": 80216
+  },
+  {
+    "path": "outputs/exports/solid_rally_development/valid_window_trajectories.jsonl",
+    "sha256": "033c45ed32259629787a3861eed1d556ca4648512a6a9d00693cd9dd6c237b87",
+    "bytes": 8500621
+  }
+]

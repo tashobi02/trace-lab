@@ -1,0 +1,41 @@
+{
+  "model_class": "LinearSurrogateModel; five sklearn LogisticRegression members",
+  "native_output": "argmax of mean class probabilities; hard 0/1; ties choose class0",
+  "proposed_development_q": "Mean stored LogisticRegression class0 support before hard argmax; uncalibrated model score for right-window increase, not measured arousal or paper KNN reproduction.",
+  "live_inputs": 121,
+  "native_recorded_recomputed_exact_matches": 121,
+  "independent_probability_max_abs_error": 0.0,
+  "identical_input_repeats": 20,
+  "repeated_native_outputs": [
+    1.0
+  ],
+  "model_scaler_state_before": "12506cae1323efcfb65d723d2a5fa419387ac9b9fa5cfa74ef45b1e2272ac256",
+  "model_scaler_state_after": "12506cae1323efcfb65d723d2a5fa419387ac9b9fa5cfa74ef45b1e2272ac256",
+  "frozen_state_unchanged": true,
+  "unity_feature_names_match_csv_order": true,
+  "unity_feature_aggregation": "DataLogger averages fixed-update lists since last GetSurrogateVector then ResetForm; Python averages 15 decision vectors. Time weighting remains Session 5 validation.",
+  "reference_pairs_downsampled": 2838,
+  "reference_pairs_full": 3622,
+  "ranking_equals_positive_delta_all_rows": true,
+  "adjacent_interval_pairs_matched": 3622,
+  "stored_delta_equals_left_minus_right": true,
+  "stored_delta_reconstruction_max_abs_error": 5.684341886080802e-14,
+  "native_class_counts": {
+    "0": 33,
+    "1": 88
+  },
+  "live_increase_q_summary": {
+    "min": 0.09310787368033535,
+    "max": 0.7176533016576083,
+    "mean": 0.40586763449961605
+  },
+  "reference_increase_q_summary": {
+    "min": 0.04926667593411782,
+    "max": 0.9622616418262848,
+    "mean": 0.5003862810169621
+  },
+  "live_any_member_clipping_pair_fraction": 0.05785123966942149,
+  "reference_any_member_clipping_pair_fraction": 0.6782945736434108,
+  "stateful_behavior": "Constructor reads reference data, computes derived target books and evaluates stored members; inference only scales/clips/predicts. Missing models would trigger upstream training; audit guard forbids it.",
+  "native_action_third_branch": "Compiled OnActionReceived: >0 calls StateSaveLoad.LoadEnvironment and returns before steering/pedal update; 0 means ordinary control. Matched adapter must fix third branch to0."
+}

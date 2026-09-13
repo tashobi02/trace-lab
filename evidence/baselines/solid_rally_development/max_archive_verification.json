@@ -1,0 +1,11 @@
+{
+  "condition": "MAX",
+  "status": "PASS",
+  "raw_files": 157,
+  "raw_bytes": 196461233,
+  "archive": "MAX_runtime_evidence.tar.gz",
+  "archive_bytes": 31499760,
+  "archive_sha256": "6779b15471877ab0abf9920b2ea435658f1d2ffa787c6207c7f25d4644d95a71",
+  "archive_members_verified": true,
+  "excluded_bulk": "Per-process runtime_build and config-home caches; full player inventories separately saved."
+}

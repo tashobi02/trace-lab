@@ -1,8 +1,9 @@
-# Notebook Architecture
+# Notebook architecture
 
-Trace-lab uses a notebook-first architecture. Notebooks act as the entry points and reusable implementation units.
-There are four primary notebook types:
-1. **Library**: Define reusable functions and classes (e.g., `preference_scoring.ipynb`).
-2. **Experiment**: Configure, validate and supervise a complete experiment (e.g., `run_task_baseline.ipynb`).
-3. **Worker**: Execute one training job or evaluation episode in a fresh kernel (e.g., `train_policy.ipynb`).
-4. **Analysis or Verification**: Read saved evidence, calculate results, and check correctness (e.g., `verify_rewards.ipynb`).
+Setup and pure standard-library tests use the Python 3.13 controller. Scientific analysis, adapter tests and scoring use the declared Python 3.9 scientific kernel. Its 29-package Jupyter tooling overlay is locked separately from the preserved 119-package worker runtime. Fresh training/evaluation worker subprocesses remove the overlay from their environment and use the original scientific package versions.
+
+`notebook_imports.ipynb` supplies a small import hook. It executes only explicitly tagged `module` cells from `notebooks/library/*.ipynb`, with ordinary Python module namespaces and dependency caching. Demonstration/verification cells are excluded from imports. A fresh subprocess loads the same notebook source directly; no maintained `.py` copy or dependency on the parent research workspace is needed.
+
+Library roles: `runtime_contract` resolves frozen configurations and assets; `preference_scoring` checks and scores the ensemble; `baseline_rewards` supplies TASK/MAX reward state; `environment_adapter` constructs windows and observations; `telemetry_recording` records decisions and preserves the SB3 Monitor boundary; `unity_runtime` owns the copied player lifecycle; `policy_training` measures PPO updates and verifies reloads; `experiment_supervision` reserves attempts and supervises fresh workers. `evidence_analysis`, `trace_export`, `scientific_figures` and `evidence_verification` compute historical results and check parity.
+
+Experiment notebooks default to explicitly labelled historical review. Set `EXECUTE_NEW_RUN=True` to invoke the implemented supervisor. Worker notebooks provide parameterized `run_worker` entry points and display the historical worker result by default. No notebook prints a successful run without inspecting a result or executing its checks.

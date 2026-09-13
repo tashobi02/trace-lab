@@ -1,0 +1,133 @@
+--- a/affectively/environments/base.py
++++ b/affectively/environments/base.py
+@@ -121,18 +121,7 @@
+         self.model = LinearSurrogateModel(game=self.game, cluster=self.cluster, classifier=self.classifier, preference=self.preference)
+ 
+     def reset(self, **kwargs):
+-        state = self.env.reset()
+-        
+-        for modality in range(len(state)):
+-            if len(np.asarray(state[modality]).shape) == 1:
+-                arousal_window = self.episode_arousal_trace[-5:]
+-                arousal_window = list(arousal_window) + list(np.zeros(5-len(arousal_window))) if len(arousal_window) < 5 else arousal_window
+-                state[modality] = np.concatenate((state[modality], arousal_window))
+-                if self.imitation_learning == 1 and not self.discretize:
+-                    added = [self.episode_length, len(self.episode_arousal_trace), self.target_time_idx]
+-                    state[modality] = np.concatenate((added, state[modality]))
+-                break
+-
++        # Discard the previous episode before requesting/constructing a new state.
+         self.cumulative_ra, self.cumulative_rb, self.cumulative_rl = 0, 0, 0
+         self.current_score, self.previous_score = 0, 0
+         self.score_change = False
+@@ -142,8 +131,30 @@
+         self.previous_surrogate, self.current_surrogate = np.empty(0), np.empty(0)
+         self.episode_arousal_trace.clear()
+         self.period_arousal_trace.clear()
++        self.arousal_trace.clear()
++        self.surrogate_list.clear()
+         self.target_time_idx = 0
++        self.ra, self.rb, self.rl = [], [], []
++        self.raw_state, self.game_obs = [], []
++        self.customSideChannel.levelEnd = False
++        self.customSideChannel.interactiveReset = False
++        self.customSideChannel.arousal_vector.clear()
++        self.customSideChannel.pos.clear()
++        state = self.env.reset()
++        for modality in range(len(state)):
++            if len(np.asarray(state[modality]).shape) == 1:
++                state[modality] = np.concatenate((state[modality], np.zeros(5)))
++                if self.imitation_learning == 1 and not self.discretize:
++                    state[modality] = np.concatenate(([0, 0, 0], state[modality]))
++                break
++        self.raw_state = state
+         return state
++
++    def close(self):
++        # gym.Env.close() is a no-op; explicitly release the Unity wrapper.
++        if not getattr(self, "_closed", False):
++            self.env.close()
++            self._closed = True
+ 
+     def reward_behavior(self):
+         """
+@@ -249,8 +260,11 @@
+         stacked_surrogates = np.stack(stacked_surrogates, axis=-1) 
+         self.current_surrogate = np.mean(stacked_surrogates, axis=1) 
+         if self.current_surrogate.size != 0:
+-            if self.previous_surrogate.size == 0:
+-                self.previous_surrogate = np.zeros(len(self.current_surrogate))
++            if self.preference and self.previous_surrogate.size == 0:
++                # The first real window is warm-up, not a measured transition.
++                self.previous_surrogate = self.current_surrogate.copy()
++                self.customSideChannel.arousal_vector.clear()
++                return None
+             previous_scaler = np.array(self.previous_surrogate)
+             if self.preference:
+                 tensor = np.array(list(previous_scaler) + list(self.current_surrogate))
+--- a/affectively/environments/solid_game_obs.py
++++ b/affectively/environments/solid_game_obs.py
+@@ -16,7 +16,7 @@
+         game_obs = state[0]
+         if self.discretize:
+             game_obs = self.discretize_observations(game_obs)
+-        self.game_obs = self.tuple_to_vector(game_obs)
++        self.game_obs = np.asarray(game_obs, dtype=self.observation_space.dtype)
+         return self.game_obs
+ 
+     def discretize_observations(self, game_obs):
+--- a/affectively/environments/__init__.py
++++ b/affectively/environments/__init__.py
+@@ -1,6 +1,7 @@
+ import numpy as np
+ import gym
+ import gymnasium as gymnasium
++from mlagents_envs.base_env import TerminalSteps
+ from gym.spaces import MultiDiscrete, Discrete
+ 
+ from affectively.environments.heist_cv import HeistEnvironmentCV
+@@ -49,15 +50,24 @@
+ 
+     def step(self, action):
+         obs, reward, done, info = self.env.step(action)
+-        terminated = bool(done or getattr(self.env.unwrapped.customSideChannel, "levelEnd", False))
+-        truncated = bool(getattr(self.env.unwrapped, "episode_length", 0) > (6000 / getattr(self.env.unwrapped, "decision_period", 1)))
+-
+-        if truncated:
+-            info["TimeLimit.truncated"] = True
+-
+-        if getattr(self.env.unwrapped.customSideChannel, "levelEnd", False):
+-            self.env.unwrapped.customSideChannel.levelEnd = False
+-
++        info = dict(info)
++        native = self.env.unwrapped
++        level_end = bool(getattr(native.customSideChannel, "levelEnd", False))
++        raw_step = info.get("step")
++        interrupted = isinstance(raw_step, TerminalSteps) and bool(np.any(raw_step.interrupted))
++        limit_reached = getattr(native, "episode_length", 0) >= (6000 / getattr(native, "decision_period", 1))
++        terminated = bool((done or level_end) and not interrupted)
++        truncated = bool(interrupted or (limit_reached and not terminated))
++        info["TimeLimit.truncated"] = bool(truncated and not terminated)
++        if interrupted:
++            info["episode_end_reason"] = "unity_interrupted"
++        elif terminated:
++            info["episode_end_reason"] = "unity_terminal_or_level_end"
++        elif truncated:
++            info["episode_end_reason"] = "wrapper_decision_limit"
++        else:
++            info["episode_end_reason"] = None
++        native.customSideChannel.levelEnd = False
+         return obs, reward, terminated, truncated, info
+ 
+     def close(self):
+--- a/affectively/utils/__init__.py
++++ b/affectively/utils/__init__.py
+@@ -48,7 +48,7 @@
+ 
+     def on_message_received(self, msg: IncomingMessage) -> None:
+         message_text = msg.read_string()
+-        self.levelEnd = False
++        # Latch level-end until reset/step consumes it; later vector messages must not erase it.
+ 
+         if message_text == '[Level Ended]':
+             self.levelEnd = True

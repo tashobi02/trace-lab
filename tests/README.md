@@ -1,5 +1,1 @@
-# Workspace tests
-
-`offline/test_workspace_configuration.ipynb` checks relocation, missing versus unconfigured paths, executable validation, strict YAML keys and runtime mismatch detection. It uses temporary fixtures and no Unity/model assets.
-
-Run in the pinned controller kernel with errors enabled. An assertion failure fails notebook execution. Test progress and the final pass/failure count remain visible in the notebook. The same notebook runs in CI. Runtime and rebuild validation require local assets and are reported separately from these offline checks.
+Offline notebooks test reward, window, observation/action, Monitor and attempt behavior with fixtures. Integration notebooks load the actual frozen estimators/checkpoints and inspect the separately executed live smoke lifecycle evidence. Missing assets or missing live evidence fail dependent checks. Run in each notebook's declared kernel. Pure reward/attempt/workspace tests run in controller-only CI; scientific fixture tests run in a separate Python 3.9 CI job. Live Unity checks require the recorded external assets and are not claimed as hosted CI coverage.

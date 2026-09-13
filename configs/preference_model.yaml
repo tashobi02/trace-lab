@@ -1,7 +1,67 @@
-# Selected ensemble, preprocessing and class interpretation
-model_type: LogisticRegression
-ensemble_size: 5
-feature_order:
-  - arousal
-  - valence
-target_class: 0  # Increasing-transition support
+{
+  "model_type": "LogisticRegression",
+  "scaler_type": "MinMaxScaler",
+  "ensemble_size": 5,
+  "feature_order": [
+    "playerStanding_L",
+    "playerScore_L",
+    "playerSpeed_L",
+    "playerIsGrounded_L",
+    "playerIsMidAir_L",
+    "playerIsLooping_L",
+    "playerIsCrashing_L",
+    "playerIsOffRoad_L",
+    "playerGasPedal_L",
+    "playerSteering_L",
+    "playerLap_L",
+    "playerDistanceToWayPoint_L",
+    "playerRespawn_L",
+    "visibleBotCount_L",
+    "botStanding_L",
+    "botScore_L",
+    "botSpeed_L",
+    "botIsGrounded_L",
+    "botIsLooping_L",
+    "botIsOffRoad_L",
+    "botIsCrashing_L",
+    "botGasPedal_L",
+    "botSteering_L",
+    "botLap_L",
+    "botDistanceToWayPoint_L",
+    "botPlayerDistance_L",
+    "visibleLoopCount_L",
+    "playerStanding_R",
+    "playerScore_R",
+    "playerSpeed_R",
+    "playerIsGrounded_R",
+    "playerIsMidAir_R",
+    "playerIsLooping_R",
+    "playerIsCrashing_R",
+    "playerIsOffRoad_R",
+    "playerGasPedal_R",
+    "playerSteering_R",
+    "playerLap_R",
+    "playerDistanceToWayPoint_R",
+    "playerRespawn_R",
+    "visibleBotCount_R",
+    "botStanding_R",
+    "botScore_R",
+    "botSpeed_R",
+    "botIsGrounded_R",
+    "botIsLooping_R",
+    "botIsOffRoad_R",
+    "botIsCrashing_R",
+    "botGasPedal_R",
+    "botSteering_R",
+    "botLap_R",
+    "botDistanceToWayPoint_R",
+    "botPlayerDistance_R",
+    "visibleLoopCount_R"
+  ],
+  "target_class": 0,
+  "scaled_feature_clip": [
+    0,
+    1
+  ],
+  "fitted_state_must_remain_unchanged": true
+}

@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "evaluation_episodes": 30,
+  "evaluation_decisions": 18000,
+  "valid_pairs": 1170,
+  "maximum_abs_errors": {
+    "q": 2.220446049250313e-16,
+    "reward": 2.220446049250313e-16,
+    "pair": 0.0
+  },
+  "frozen_estimator_state_sha256": "12506cae1323efcfb65d723d2a5fa419387ac9b9fa5cfa74ef45b1e2272ac256",
+  "fresh_worker_processes": 30,
+  "random_action_sequences_exactly_replayed": true,
+  "limits": [
+    "TASK and MAX each have one trained policy; repeated episodes do not replicate training.",
+    "Requested Unity seed diversity unproven; RANDOM diversity also changes action RNG.",
+    "Success completion labels unavailable; explicit NA, natural endings and timeouts separately recorded."
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "session": "Phase 1 Session 2",
+  "captured_at_utc": "2026-09-12T06:35:07.320097+00:00",
+  "status": "COMPLETE_WITH_DOCUMENTED_CUDA_WHEEL_DEVIATION",
+  "artifact_root": "/home/obidit/moggingSSLResearch/900_PrePreDefense/phase1",
+  "original_environment_prefix": "/home/obidit/miniconda3/envs/affect-envs",
+  "original_interpreter": "/home/obidit/miniconda3/envs/affect-envs/bin/python",
+  "python": "3.9.23 | packaged by conda-forge | (main, Jun  4 2025, 17:57:12) \n[GCC 13.3.0]",
+  "platform": "Linux-7.2.4-arch1-2-x86_64-with-glibc2.44",
+  "architecture": "x86_64",
+  "os_release": "NAME=\"Arch Linux\"\nPRETTY_NAME=\"Arch Linux\"\nID=arch\nBUILD_ID=rolling\nANSI_COLOR=\"38;2;23;147;209\"\nHOME_URL=\"https://archlinux.org/\"\nDOCUMENTATION_URL=\"https://wiki.archlinux.org/\"\nSUPPORT_URL=\"https://bbs.archlinux.org/\"\nBUG_REPORT_URL=\"https://gitlab.archlinux.org/groups/archlinux/-/issues\"\nPRIVACY_POLICY_URL=\"https://terms.archlinux.org/docs/privacy-policy/\"\nLOGO=archlinux-logo\n",
+  "conda_version": "26.7.1",
+  "python_distributions": 119,
+  "pip_layer_packages": 118,
+  "conda_bootstrap_packages": 26,
+  "source": {
+    "commit": "39a792a1306c17ffce8ef0510c73b404cba2ee8e",
+    "path": "/home/obidit/moggingSSLResearch/900_PrePreDefense/phase1/source_snapshot/Affectively-Framework",
+    "local_patch": {
+      "path": "source_snapshot/provenance_2026-09-12T061645Z/local_changes.patch",
+      "sha256": "7ea0a274506d66533b38b45cbf375e7177f85925637b59c5f2ddb12467a4e82a"
+    },
+    "source_archive": {
+      "path": "source_snapshot/provenance_2026-09-12T061645Z/source_tree.tar.gz",
+      "sha256": "5ddff7ca610673f706f02d40c24ce51bfa34342d524995c82894be5a29abfd23"
+    },
+    "source_manifest": {
+      "path": "source_snapshot/provenance_2026-09-12T061645Z/source_files.sha256",
+      "sha256": "b4f378e889a333b03e23c9912aa49ed803a38513dcf9e7bf41e5728a44d688b6"
+    },
+    "full_build_manifest": {
+      "path": "source_snapshot/provenance_2026-09-12T061645Z/solid_linux_build.sha256",
+      "sha256": "4304ccc0e62c3c0fbb9824db8d102299f6a807c8ff8fdb8483019f3f1147ba49"
+    },
+    "selected_model_preprocessing_manifest": {
+      "path": "source_snapshot/provenance_2026-09-12T061645Z/selected_demo_model_and_scalers.sha256",
+      "sha256": "3cf1b0f8ff6ccaab841966d5a2cb2b77dedbd5cec29d192a431cd90f6ebbfae3"
+    },
+    "model_mode_and_parameters": {
+      "path": "source_snapshot/provenance_2026-09-12T061645Z/selected_demo_contract.json",
+      "sha256": "647e69ca351f30a6d04a0bcea95c99f8edfbae5d4953e3a5c2fc28ebeb7e9c33"
+    },
+    "data_manifest": {
+      "path": "source_snapshot/provenance_2026-09-12T061645Z/solid_datasets.sha256",
+      "sha256": "443e1059f8eb83d0b004a3f76de50efa5029af41701c3730f40de1411a3a7581"
+    }
+  },
+  "rebuild": {
+    "mode": "offline_fresh_prefix_conda_explicit_then_pip_require_hashes",
+    "validation_prefix": "/home/obidit/moggingSSLResearch/900_PrePreDefense/phase1/environment/rebuild-validation",
+    "script": {
+      "path": "environment/rebuild_offline.py",
+      "sha256": "ab3a491a322f9e26cf271f302002642f787a768d45f4510d874404cc1c2b570c"
+    },
+    "conda_lock": {
+      "path": "environment/conda-explicit-linux-64.txt",
+      "sha256": "d4dda45908e0751a99e76cc60bad5ea141e1d721602e266d1a340cbfb8d84111"
+    },
+    "pip_lock": {
+      "path": "03_dependency_lock.txt",
+      "sha256": "e2bd2aa219fe1e7677fd9c66e948eda7a507f72e3093d2103b62bb6ef3d9266a"
+    },
+    "normalized_export": {
+      "path": "environment/environment.yml",
+      "sha256": "623267fc393004196fd0b09a62dc2cc7e7f287363677e7de28da708c9990d3ef"
+    },
+    "artifacts": {
+      "path": "environment/artifact_manifest.json",
+      "sha256": "db66c3676eac482a26edd06f0a9a9617de5701aba3a702f1f498c2d48aea7bc1"
+    },
+    "bulk_checksums": {
+      "path": "environment/artifacts.sha256",
+      "sha256": "dbb986a159f4ba172884baa8be83309fecce711e9a57d199cb25175408bb48fe"
+    },
+    "archive_bytes": 3283855438,
+    "result": {
+      "path": "environment/rebuild_result.json",
+      "sha256": "1bf6bd3d90112970b8f69d168be6f70821e5cefde695a088807e6edd9ce80729"
+    },
+    "log": {
+      "path": "environment/rebuild.log",
+      "sha256": "0c743a980bce37b0969e58612c2606eaefcc265042266e971191d567e0f46b89"
+    },
+    "bulk_artifact_storage": "environment/artifacts/ (local, excluded from Git; retain for offline restoration)"
+  },
+  "cpu_deviation": {
+    "decision": "Retain exact installed torch==2.7.1+cu118; explicitly execute on CPU.",
+    "reason": "Reproduce the working demo foundation with unchanged original packages; avoid an unvalidated CPU-wheel migration.",
+    "upstream_requirements_torch": "2.7.1+cu118",
+    "upstream_readme_prose_torch": "2.8.0+cu118",
+    "execution": {
+      "version": "2.7.1+cu118",
+      "compiled_cuda": "11.8",
+      "cuda_available": false,
+      "cpu_loss": 14.0,
+      "cpu_gradient": [
+        2.0,
+        4.0,
+        6.0
+      ],
+      "device": "cpu"
+    },
+    "native_trainer_required_option": "--use_gpu 0",
+    "cpu_only_wheel_installed": false,
+    "future_change_rule": "A CPU-only wheel migration requires a new lock and revalidation before accepted pilots."
+  },
+  "packaging_relationships": {
+    "pip": {
+      "conda_record": "25.2",
+      "installed": "24.0",
+      "relationship": "bootstrap_replaced_by_pip"
+    },
+    "setuptools": {
+      "conda_record": "80.9.0",
+      "installed": "69.5.1",
+      "relationship": "bootstrap_replaced_by_pip"
+    },
+    "tzdata": {
+      "conda_record": "2026c",
+      "installed": "2026.3",
+      "relationship": "distinct_timezone_distributions_not_an_override"
+    }
+  },
+  "verification": {
+    "comparison": {
+      "all_119_python_versions_identical": true,
+      "original_checks_passed": true,
+      "rebuilt_checks_passed": true,
+      "cpu_results_identical": true,
+      "estimator_reference_outputs_identical": true,
+      "saved_ppo_dependency_load_identical": true,
+      "rebuilt_imports_do_not_use_original_environment": true,
+      "original_conda_metadata_unchanged": true,
+      "framework_checkout_status_unchanged": true,
+      "source_files_unchanged": true,
+      "selected_demo_model_and_scalers_unchanged": true,
+      "solid_datasets_unchanged": true
+    },
+    "original": {
+      "path": "environment/verification_original.json",
+      "sha256": "b75e06225982a06371f5d9f106ebb8b30bd3f0b751417e0552503e3885e33f2f"
+    },
+    "rebuilt": {
+      "path": "environment/verification_rebuilt.json",
+      "sha256": "2d20f927f5f74375865b3cab3fe5859837951a1b0582e8d6995eb368c6022700"
+    },
+    "original_pip_check_exit_code": 0,
+    "rebuilt_pip_check_exit_code": 0,
+    "all_requested_imports_passed": true,
+    "same_host_only": true,
+    "unity_launched": false,
+    "new_policy_training": false,
+    "not_session6_save_reload_proof": true
+  },
+  "scope_limits": [
+    "Same-host Linux x86-64 reconstruction; other hosts and native graphics dependencies not portability-tested.",
+    "Scientific estimator semantics, reset/reward correctness, live Unity timing and G1 remain later-session work.",
+    "Human-readable YAML export is not the hash-enforced offline rebuild tested here."
+  ],
+  "session_first_recorded_clock_utc": "2026-09-12T06:25:50+00:00"
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "path": "assets/reference_archives/checkpoint_check.tar.gz",
+    "source_identity": "session6/runtime_evidence.tar.gz",
+    "sha256": "54dc36b307fe49104c9f0b176b30aa43743c85e797c0436e3b6b97820e41487d",
+    "bytes": 4599948
+  },
+  {
+    "path": "assets/reference_archives/task_baseline.tar.gz",
+    "source_identity": "session7_8/TASK_runtime_evidence.tar.gz",
+    "sha256": "720d22529bbd4a3314ed95cb6aeeaa5375d95a3e17b5e2c8f6fdb307fe6d9d5b",
+    "bytes": 31435912
+  },
+  {
+    "path": "assets/reference_archives/max_support_baseline.tar.gz",
+    "source_identity": "session7_8/MAX_runtime_evidence.tar.gz",
+    "sha256": "6779b15471877ab0abf9920b2ea435658f1d2ffa787c6207c7f25d4644d95a71",
+    "bytes": 31499760
+  },
+  {
+    "path": "assets/reference_archives/random_baseline.tar.gz",
+    "source_identity": "session9/RANDOM_runtime_evidence.tar.gz",
+    "sha256": "69c4a93582634bc77f2c9e4ff063afe9cdc1a0f841e4710b5ad196dd91c864fa",
+    "bytes": 3406020
+  }
+]

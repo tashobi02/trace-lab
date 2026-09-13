@@ -1,5 +1,1 @@
-# Generated local evidence
-
-Notebook-generated records, executed notebook copies, rebuilt environments and caches belong here and are excluded from Git. Setup records use unique names; runtime rebuilds refuse an existing target or rebuild claim. A failed installation remains available for diagnosis; choose a new target after investigating it.
-
-Notebook files retain visible outputs from their validated execution. Full run archives and installation logs also remain here. Validation summaries under `environment/` contain compact results, while full local logs and executed notebooks remain in this directory. Do not write experiment evidence into source notebooks or overwrite historical records.
+Generated analysis, exports, live runs, historical archive extractions, environments and caches are ignored by Git. Analysis/export notebooks can regenerate their designated output files. Experiment attempts are exclusive and never overwritten. Compact review evidence is tracked under `evidence/`; notebooks retain visible results from their actual executions. Historical measurements in `reference/` are distinct from new measurements in `runs/`.

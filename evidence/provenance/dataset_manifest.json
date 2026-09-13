@@ -1,0 +1,26 @@
+[
+  {
+    "path": "affectively/datasets/solid_3000ms.csv",
+    "sha256": "dbf200fa867f294de32ab110a2d6521f274fe108c72d65f234036caf2329b881",
+    "bytes": 1297491,
+    "mode": "0o755"
+  },
+  {
+    "path": "affectively/datasets/solid_3000ms_downsampled_pairs.csv",
+    "sha256": "761863d262978479f08ffbfe886adbe7b20db52ca387b277cce4df6a3a808a25",
+    "bytes": 1532203,
+    "mode": "0o755"
+  },
+  {
+    "path": "affectively/datasets/solid_3000ms_pairs.csv",
+    "sha256": "fb73ecb55325b56b389b9f0446186246caa6779464887db84e097a70e13a84ed",
+    "bytes": 1957377,
+    "mode": "0o755"
+  },
+  {
+    "path": "affectively/datasets/solid_cluster_book.csv",
+    "sha256": "565aac9d65c53ce8ba51646d900a7c6271d7af8b898c8001d49d7a640b29d07b",
+    "bytes": 4564,
+    "mode": "0o755"
+  }
+]

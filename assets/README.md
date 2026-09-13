@@ -1,5 +1,7 @@
-# Local assets
+# External local assets
 
-Bulk files are excluded from Git. Set their actual locations in `configs/assets.local.yaml`; paths may refer to retained assets outside the clone. No asset is downloaded by notebook inspection.
+Bulk player/model/dataset files, run archives and wheel caches are excluded from Git. `restore_reference_assets.ipynb` verifies and restores them from explicitly supplied local paths. No unverified asset is silently downloaded.
 
-Expected roles: `upstream_source/`, `unity/`, `models/`, `datasets/`, and `package_cache/runtime/`. The runtime archive root must contain the `artifacts/wheels/` and `artifacts/conda/` paths listed in the runtime manifest. Preserve all 144 installation archives for offline restoration. Model/player/dataset verification belongs to the upcoming artifact/scoring implementation; this commit reports availability only.
+The runtime requires the complete frozen native layout under `assets/upstream_source/`, including the player under `affectively/builds/solid/Linux`, ten model/scaler artifacts and four datasets. `upstream/corrected_native_source.tar.gz` supplies the small source tree; the provenance manifests identify every additional file. Models/datasets retain their original relative paths because native loading uses them.
+
+Four historical run archives listed in `evidence/provenance/reference_archives.json` belong under `assets/reference_archives/`; their verified extraction lives under `outputs/reference/`. Original run IDs in archived data are provenance identities. The repository does not contain these bulk archives or a public download URL; another workstation must obtain the recorded artifacts from the research archive owner.
