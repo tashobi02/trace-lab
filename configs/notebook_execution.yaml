@@ -1,0 +1,6 @@
+schema_version: 1
+kernel_name: trace-lab-controller
+controller_python: '3.13'
+cell_timeout_seconds: 300
+rebuild_timeout_seconds: 1800
+outputs_directory: outputs

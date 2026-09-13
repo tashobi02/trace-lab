@@ -1,0 +1,99 @@
+{
+  "status": "PASS",
+  "verified_utc": "2026-09-13T08:52:30.952363+00:00",
+  "scope": "Prepared notebook workspace with real visible cell outputs; no Unity, model inference or policy training.",
+  "source_notebooks": [
+    {
+      "path": "notebooks/library/configuration.ipynb",
+      "status": "PASS",
+      "visible_code_cells": 1,
+      "sha256": "9034ce6a8dbec4ec2e93e9a6496cc1f58535b2305fc99cdf3f2905a72e608a2d"
+    },
+    {
+      "path": "notebooks/getting_started/inspect_workspace.ipynb",
+      "status": "PASS",
+      "visible_code_cells": 3,
+      "sha256": "b0740e1136208928a6839440fb2e2380edac1cee7fd7f30f2fd96fa3b5f6e680"
+    },
+    {
+      "path": "notebooks/getting_started/verify_environment.ipynb",
+      "status": "PASS",
+      "visible_code_cells": 3,
+      "sha256": "cbe7a0ae8b85f597cf63818676d0284457b771137e4ba1b42488706f5074ba27"
+    },
+    {
+      "path": "environment/validate_notebook_environment.ipynb",
+      "status": "PASS",
+      "visible_code_cells": 3,
+      "sha256": "861d42ecb31c07c101e3d289355764873cff97e1ec97d021184e95a913ee368a"
+    },
+    {
+      "path": "tests/offline/test_workspace_configuration.ipynb",
+      "status": "PASS",
+      "visible_code_cells": 2,
+      "sha256": "a9ca7750f1188440b0da97b387b261601629e989fdc934a9260263ac88ec4cff"
+    },
+    {
+      "path": "environment/rebuild_runtime.ipynb",
+      "status": "PASS",
+      "visible_code_cells": 4,
+      "sha256": "41fb2dbad370aa06eba65321884a3beb8801f00b749eb8aad5640277a287f830"
+    }
+  ],
+  "visible_code_cells": 16,
+  "all_code_cells_have_actual_saved_outputs": true,
+  "all_outputs_unhidden": true,
+  "configuration_regression_tests": 9,
+  "offline_ci_cases_reexecuted": [
+    {
+      "path": "notebooks/getting_started/inspect_workspace.ipynb",
+      "status": "PASS"
+    },
+    {
+      "path": "environment/validate_notebook_environment.ipynb",
+      "status": "PASS"
+    },
+    {
+      "path": "tests/offline/test_workspace_configuration.ipynb",
+      "status": "PASS"
+    }
+  ],
+  "runtime_rebuild": {
+    "status": "PASS",
+    "target": "outputs/environments/runtime-visible-20260913T085001Z",
+    "verified_archives": 144,
+    "command_exit_codes": [
+      0,
+      0
+    ],
+    "comparison": {
+      "status": "PASS",
+      "checks": {
+        "python_version": true,
+        "package_versions": true,
+        "pip_check": true,
+        "cpu_arithmetic": true,
+        "cpu_device": true,
+        "retained_torch": true
+      },
+      "expected_distributions": 119,
+      "missing": [],
+      "extra": [],
+      "changed": {}
+    },
+    "local_evidence": "outputs/rebuilds/20260913T085012Z-186021cc/result.json",
+    "evidence_sha256": "102668bb1ec6336624eaf956b2cdbbc5b21286f5634404f17f6da492e0ac7879"
+  },
+  "original_environment_sealed_records_unchanged": 33,
+  "git": {
+    "commits_created": 0,
+    "index_changed": false,
+    "existing_history_preserved": true
+  },
+  "github_actions": "Updated to require visible saved outputs; offline cases passed locally. Hosted workflow not run.",
+  "limits": [
+    "Same-host Linux x86-64 checks.",
+    "Notebook controller is separate from the scientific runtime; training integration remains later work.",
+    "Notebook outputs reflect the configured validation machine; rerunning elsewhere refreshes them."
+  ]
+}

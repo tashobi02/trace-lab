@@ -1,0 +1,12 @@
+schema_version: 1
+# Paths are absolute, ~-expanded, or relative to the repository root.
+# Copy to assets.local.yaml; local configuration is excluded from Git.
+# An unset value is reported as unconfigured; no path is guessed.
+runtime_python: null
+conda_executable: null
+# Directory containing artifacts/wheels and artifacts/conda from the preserved bundle.
+runtime_archives: assets/package_cache/runtime
+upstream_source: assets/upstream_source
+unity_player: assets/unity/solid.x86_64
+model_directory: assets/models
+dataset_directory: assets/datasets
