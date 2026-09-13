@@ -1,0 +1,5 @@
+# Checkpoint Check Configuration
+experiment_id: "CHECKPOINT-TEST"
+budget_decisions: 4096
+evaluation_episodes: 1
+save_frequency: 2048
