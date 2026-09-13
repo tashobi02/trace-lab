@@ -1,0 +1,9 @@
+# Observation/action contract, window length and episode horizon
+environment_name: "Solid Rally"
+observation_schema: "81 native fields + normalized time,q,valid,fresh,normalized age;86 float32 fields"
+actions: "MultiDiscrete([3,3]) -> native[steering,pedal,0]"
+window_length_decisions: 15
+delta_seconds: 3
+episode_horizon_decisions: 600
+episode_horizon_seconds: 120
+full_episode_valid_pairs: 39
